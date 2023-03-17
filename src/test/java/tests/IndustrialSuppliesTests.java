@@ -39,5 +39,9 @@ public class IndustrialSuppliesTests extends TestBase{
         Assert.assertEquals(list.size(),31);
     }
 
+    public void test(){
+
+    }
+
 
 }
