@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 import utils.Driver;
 
@@ -13,9 +14,11 @@ public class Furniture1 {
     @Test
     public void test() throws InterruptedException {
 
-        WebDriver driver = Driver.getDriver();
-        driver.manage().window().maximize();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
 
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
         driver.get("https://www.webstaurantstore.com/");
 
         driver.findElement(By.xpath("//a[ contains( . , 'Furniture' )]")).click();
