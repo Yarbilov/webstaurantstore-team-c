@@ -18,21 +18,21 @@ public class HomePage {
 
     @FindBy(xpath="//div[@class='banner-pager']//span[1]")
     private WebElement firstButton;
-    @FindBy(xpath="//img[@alt='Shop 10% Off Ghirardelli Chips, Cocoas, Wafers, and More']")
+    @FindBy(xpath="//img[contains(@src,'slides')]")
     private WebElement firstImage;
     @FindBy(xpath="//div[@ id='ProductBoxContainer']")
     private List<WebElement> product_listing;
     @FindBy(xpath="//div[@class='banner-pager']//span[2]")
     private WebElement secondButton;
-    @FindBy(xpath="//img[@alt='Shop Bobrick Restroom Replacements For a Sanitary Establishment']")
+    @FindBy(xpath="//img[@alt='Create, make & bake with the ingredients preferred by professionals']")
     private WebElement secondImage;
     @FindBy(xpath="//div[@class='banner-pager']//span[3]")
     private WebElement thirdButton;
-    @FindBy(xpath="//img[@alt='Great Value on Cambro Pro Cart Ultra® Holding Cabinets to Transport Food Safely']")
+    @FindBy(xpath="//img[@alt='Cold Brew Coffee & Equipment ']")
     private WebElement thirdImage;
     @FindBy(xpath="//div[@class='banner-pager']//span[4]")
     private WebElement fourthButton;
-    @FindBy(xpath="//img[@alt='Take 15% OFF Capora Beverage Mixes & Flavoring Sauces for Decadent Desserts & Drinks ']")
+    @FindBy(xpath="//img[@alt='Take-Out Containers ']")
     private WebElement fourthImage;
     @FindBy(xpath="//a[@aria-label='WebstaurantStore']")
     private WebElement homePageLogo;
