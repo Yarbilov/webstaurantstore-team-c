@@ -16,7 +16,7 @@ public class TestBase {
 
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUpEachMethod() throws IOException {
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
