@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.time.Duration;
 
 
+
+
 public class TestBase {
 
 
@@ -23,7 +25,10 @@ public class TestBase {
         Driver.getDriver().get(ConfigReader.getProperty("homepage"));
     }
 
-    @AfterMethod(alwaysRun = true)
+
+
+    @AfterMethod (alwaysRun = true)
+
     public void tearDownMethod(){
         Driver.quitDriver();
     }
