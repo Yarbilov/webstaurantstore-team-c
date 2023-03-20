@@ -13,7 +13,7 @@ public class DynamicBannersTests extends TestBase{
 
         new HomePage().click1Button();
         new HomePage().click1Image();
-        Assert.assertEquals(Driver.getDriver().getTitle(),"Ghirardelli Chocolate Wafers & Baking Chips - WebstaurantStore");
+        Assert.assertEquals(Driver.getDriver().getTitle(),"Torani Purees, Syrups, & Smoothie Mixes - WebstaurantStore");
     }
 
     @Test
@@ -21,7 +21,7 @@ public class DynamicBannersTests extends TestBase{
 
         new HomePage().click2Button();
         new HomePage().click2Image();
-        Assert.assertEquals(Driver.getDriver().getTitle(),"Bobrick Restroom Replacements - WebstaurantStore");
+        Assert.assertEquals(Driver.getDriver().getTitle(),"Bulk Chocolate - WebstaurantStore");
 
     }
 
@@ -30,7 +30,7 @@ public class DynamicBannersTests extends TestBase{
 
         new HomePage().click3Button();
         new HomePage().click3Image();
-        Assert.assertEquals(Driver.getDriver().getTitle(),"Cambro Pro Cart Ultra® Holding Cabinets - WebstaurantStore");
+        Assert.assertEquals(Driver.getDriver().getTitle(),"Cold Brew Coffee & Equipment - WebstaurantStore");
 
     }
 
@@ -39,7 +39,7 @@ public class DynamicBannersTests extends TestBase{
 
         new HomePage().click4Button();
         new HomePage().click4Image();
-        Assert.assertEquals(Driver.getDriver().getTitle(),"Capora Beverage Mixes & Flavoring Sauces - WebstaurantStore");
+        Assert.assertEquals(Driver.getDriver().getTitle(),"Choice Take-Out Containers - WebstaurantStore");
         new HomePage().clickHomePageLogo();
     }
 
@@ -49,7 +49,7 @@ public class DynamicBannersTests extends TestBase{
         new HomePage().click1Button();
         new HomePage().click1Image();
         int actualAmount=new HomePage().getProduct_listing().size();
-        int expectedAmount=24;
+        int expectedAmount=60;
         Assert.assertEquals(actualAmount,expectedAmount);
 
     }
@@ -60,7 +60,7 @@ public class DynamicBannersTests extends TestBase{
         new HomePage().click2Button();
         new HomePage().click2Image();
         int actualAmount=new HomePage().getProduct_listing().size();
-        int expectedAmount=5;
+        int expectedAmount=60;
         Assert.assertEquals(actualAmount,expectedAmount);
 
     }
@@ -71,7 +71,7 @@ public class DynamicBannersTests extends TestBase{
         new HomePage().click3Button();
         new HomePage().click3Image();
         int actualAmount=new HomePage().getProduct_listing().size();
-        int expectedAmount=60;
+        int expectedAmount=28;
         Assert.assertEquals(actualAmount,expectedAmount);
 
     }
@@ -82,7 +82,7 @@ public class DynamicBannersTests extends TestBase{
         new HomePage().click4Button();
         new HomePage().click4Image();
         int actualAmount=new HomePage().getProduct_listing().size();
-        int expectedAmount=37;
+        int expectedAmount=52;
         Assert.assertEquals(actualAmount,expectedAmount);
 
     }
