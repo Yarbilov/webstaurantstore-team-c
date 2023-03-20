@@ -21,14 +21,14 @@ public class TestBase {
 
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setUpEachMethod() throws IOException {
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Driver.getDriver().get(ConfigReader.getProperty("homepage"));
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDownMethod(){
         Driver.quitDriver();
     }
