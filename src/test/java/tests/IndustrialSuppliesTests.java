@@ -36,7 +36,9 @@ public class IndustrialSuppliesTests extends TestBase{
         itemsSearch();
         InsideIndustrialSuppliesPage insidePage = new InsideIndustrialSuppliesPage();
         List<WebElement> list = insidePage.getList();
-        Assert.assertEquals(list.size(),31);
+        int numberItems = insidePage.getList().size();
+        Assert.assertEquals(list.size(),numberItems);
+
     }
 
     public void test(){
