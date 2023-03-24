@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import pages.IndustrialSuppliesPage;
 import pages.InsideIndustrialSuppliesPage;
 import utils.Driver;
+import utils.SeleniumUtils;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -62,6 +63,19 @@ public class IndustrialSuppliesTests extends TestBase{
         mainPageTest();
         new InsideIndustrialSuppliesPage().lookForItems(searchTerm);
         Assert.assertTrue(Driver.getDriver().getTitle().contains(searchTerm));
+    }
+
+    @Test
+    public void scrollPage(){
+        mainPageTest();
+        SeleniumUtils.scroll(10000,500);
+    }
+
+    @Test
+    public void scrollToElement() {
+        mainPageTest();
+        SeleniumUtils.scrollToElement(new InsideIndustrialSuppliesPage().getFooterPrivacy());
+
     }
 
 
