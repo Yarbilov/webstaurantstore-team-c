@@ -34,6 +34,26 @@
             <artifactId>selenium-java</artifactId>
             <version>4.8.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.basepom</groupId>
+            <artifactId>basepom-policy</artifactId>
+            <version>10</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.prismacapacity</groupId>
+            <artifactId>basepom-oss</artifactId>
+            <version>0.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.devallever</groupId>
+            <artifactId>permission</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.devallever</groupId>
+            <artifactId>permission</artifactId>
+            <version>0.0.1</version>
+        </dependency>
 
 
 
