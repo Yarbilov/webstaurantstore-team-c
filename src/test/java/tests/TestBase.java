@@ -28,11 +28,11 @@ public class TestBase {
 
 
 
-    @AfterMethod (alwaysRun = true)
-
-    public void tearDownMethod(){
-        Driver.quitDriver();
-    }
+//    @AfterMethod (alwaysRun = true)
+//
+//    public void tearDownMethod(){
+//        Driver.quitDriver();
+//    }
 
 
 }
