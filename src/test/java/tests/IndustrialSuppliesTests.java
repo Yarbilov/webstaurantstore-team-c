@@ -48,7 +48,7 @@ public class IndustrialSuppliesTests extends TestBase{
 
     }
 
-    @DataProvider
+    @DataProvider(parallel = true)
     public Object[][] getData(){
 
         return new Object[][] {
