@@ -11,59 +11,59 @@ import org.openqa.selenium.safari.SafariDriver;
 public class Driver {
 
 
-    private static WebDriver driver;
+    private static ThreadLocal <WebDriver> drivers = new ThreadLocal<>();
 
     private Driver(){}
 
-    public static WebDriver getDriver() {
+    public static synchronized WebDriver getDriver() {
 
         String browser = System.getProperty("browser");
 
         if(browser == null) {
             browser = ConfigReader.getProperty("browser");
         }
-        if(driver == null) {
+        if(drivers.get() == null) {
 
             switch (browser) {
                 case "chrome":
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
-                    driver = new ChromeDriver(options);
+                    drivers.set(new ChromeDriver(options));
                     break;
                 case "headlessChrome":
                     ChromeOptions chromeOptionsoptions = new ChromeOptions();
                     chromeOptionsoptions.addArguments("--remote-allow-origins=*");
                     chromeOptionsoptions.addArguments("--headless");
-                    driver = new ChromeDriver(chromeOptionsoptions);
+                    drivers.set(new ChromeDriver(chromeOptionsoptions));
                     break;
                 case "edge":
-                    driver = new EdgeDriver();
+                    drivers.set(new EdgeDriver());
                     break;
                 case "headlessEdge":
                     EdgeOptions edgeOptions = new EdgeOptions();
                     edgeOptions.addArguments("--headless");
-                    driver = new EdgeDriver(edgeOptions);
+                    drivers.set(new EdgeDriver(edgeOptions));
                     break;
                 case "firefox":
-                    driver = new FirefoxDriver();
+                    drivers.set(new FirefoxDriver());
                     break;
                 case "safari":
-                    driver = new SafariDriver();
+                    drivers.set(new SafariDriver());
                     break;
                 default:
                     throw new RuntimeException("Invalid Browser");
             }
         }
 
-        return driver;
+        return drivers.get();
     }
 
 
-    public static void quitDriver(){
+    public synchronized static void quitDriver(){
 
-        if(driver != null){
-            driver.quit();
-            driver = null;
+        if(drivers.get() != null){
+            drivers.get().quit();
+            drivers.remove();
         }
 
     }
