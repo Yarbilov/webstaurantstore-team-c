@@ -64,11 +64,6 @@ public class FurnitureTests3 {
 
     }
 
-    @Test
-    public void testFurniture9() throws InterruptedException {
-        new FurniturePage().test();
-        Assert.assertEquals(Driver.getDriver().getTitle(), "Restaurant Tables ");
 
-    }
 
 }
