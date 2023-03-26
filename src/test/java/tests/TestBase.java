@@ -57,6 +57,7 @@ public class TestBase {
 
 
 
+
     @AfterMethod (alwaysRun = true)
 
     public void tearDownMethod(ITestResult testResult){
@@ -73,6 +74,7 @@ public class TestBase {
 
         Driver.quitDriver();
     }
+
 
 
     @AfterSuite(alwaysRun = true)
