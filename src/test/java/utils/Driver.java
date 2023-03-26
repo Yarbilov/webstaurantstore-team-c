@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -16,8 +17,11 @@ public class Driver {
 
     public static WebDriver getDriver() {
 
-        String browser = ConfigReader.getProperty("browser");
+        String browser = System.getProperty("browser");
 
+        if(browser == null) {
+            browser = ConfigReader.getProperty("browser");
+        }
         if(driver == null) {
 
             switch (browser) {
@@ -26,8 +30,19 @@ public class Driver {
                     options.addArguments("--remote-allow-origins=*");
                     driver = new ChromeDriver(options);
                     break;
+                case "headlessChrome":
+                    ChromeOptions chromeOptionsoptions = new ChromeOptions();
+                    chromeOptionsoptions.addArguments("--remote-allow-origins=*");
+                    chromeOptionsoptions.addArguments("--headless");
+                    driver = new ChromeDriver(chromeOptionsoptions);
+                    break;
                 case "edge":
                     driver = new EdgeDriver();
+                    break;
+                case "headlessEdge":
+                    EdgeOptions edgeOptions = new EdgeOptions();
+                    edgeOptions.addArguments("--headless");
+                    driver = new EdgeDriver(edgeOptions);
                     break;
                 case "firefox":
                     driver = new FirefoxDriver();
