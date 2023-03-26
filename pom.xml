@@ -67,8 +67,23 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.26</version>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.atomicleopard</groupId>
+            <artifactId>webelemental</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.metalloid-project</groupId>
+            <artifactId>conditions</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.metalloid-project</groupId>
+            <artifactId>metalloid-webelement-name</artifactId>
+            <version>2.0</version>
         </dependency>
 
     </dependencies>
