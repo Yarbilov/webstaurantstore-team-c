@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.IndustrialSuppliesPage;
@@ -68,7 +69,7 @@ public class IndustrialSuppliesTests extends TestBase{
     @Test
     public void scrollPage(){
         mainPageTest();
-        SeleniumUtils.scroll(10000,500);
+      SeleniumUtils.scroll(10000,500);
     }
 
     @Test
