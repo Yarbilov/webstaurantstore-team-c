@@ -19,12 +19,16 @@ public class CheckOutPage {
     }
 
 
-    @FindBy(xpath = "//a[@data-name='Industrial Wipes']")
+    @FindBy(xpath = "//a[@data-id='1684']")
     private WebElement industrialWipes;
+
 
     @FindBy(xpath = "//input[@type='submit']")
     private List<WebElement>  industrialWipesItems;
 
+    public List<WebElement> getIndustrialWipesItems() {
+        return industrialWipesItems;
+    }
 
     public WebElement getAddedPopup() {return addedPopup;}
 
@@ -61,7 +65,6 @@ public class CheckOutPage {
     @FindBy(id = "email")
     private WebElement emailBox;
     public WebElement getEmailBox() {return emailBox;}
-
     public WebElement getNameBox() {return nameBox;}
     public WebElement getCompanyBox() {return companyBox;}
     public WebElement getAddress1Box() {return address1Box;}
