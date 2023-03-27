@@ -6,7 +6,7 @@
     <test name="UI Tests">
 
         <classes>
-            <class name="tests.FurnitureTest">
+            <class name="tests.FurnitureTest2">
                 <methods>
                     <include name="itemsSearch"/>
                 </methods>

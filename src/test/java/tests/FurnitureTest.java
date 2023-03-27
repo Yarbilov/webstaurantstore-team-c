@@ -2,18 +2,17 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.Furniture1;
 import pages.FurniturePage;
 import utils.Driver;
 
-public class FurnitureTests3 {
+public class FurnitureTest {
 
 
 
     @Test
 
     public void testFurniture1() throws InterruptedException {
-        new Furniture1().test();
+        new Furniture1connectedToFurniture().test();
         new FurniturePage().test();
         Assert.assertEquals(Driver.getDriver().getTitle(), "Furniture ");
 
