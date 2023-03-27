@@ -11,7 +11,7 @@ import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.IndustrialSuppliesPage;
-import pages.InsideIndustrialSuppliesPage;
+import pages.InsideIndustrialSupplies;
 import utils.Driver;
 import utils.SeleniumUtils;
 
@@ -34,14 +34,14 @@ public class IndustrialSuppliesTests extends TestBase{
     @Test
     public void itemsSearch(){
         mainPageTest();
-        InsideIndustrialSuppliesPage insidePage = new InsideIndustrialSuppliesPage();
+        InsideIndustrialSupplies insidePage = new InsideIndustrialSupplies();
         insidePage.lookForItems("tools");
         Assert.assertTrue(insidePage.getMessage().isDisplayed());
     }
     @Test
     public void itemsSize(){
         itemsSearch();
-        InsideIndustrialSuppliesPage insidePage = new InsideIndustrialSuppliesPage();
+        InsideIndustrialSupplies insidePage = new InsideIndustrialSupplies();
         List<WebElement> list = insidePage.getList();
         int numberItems = insidePage.getList().size();
         Assert.assertEquals(list.size(),numberItems);
@@ -62,7 +62,7 @@ public class IndustrialSuppliesTests extends TestBase{
     @Test (dataProvider = "getData")
     public void testSearch(String searchTerm){
         mainPageTest();
-        new InsideIndustrialSuppliesPage().lookForItems(searchTerm);
+        new InsideIndustrialSupplies().lookForItems(searchTerm);
         Assert.assertTrue(Driver.getDriver().getTitle().contains(searchTerm));
     }
 
@@ -75,7 +75,7 @@ public class IndustrialSuppliesTests extends TestBase{
     @Test
     public void scrollToElement() {
         mainPageTest();
-        SeleniumUtils.scrollToElement(new InsideIndustrialSuppliesPage().getFooterPrivacy());
+        SeleniumUtils.scrollToElement(new InsideIndustrialSupplies().getFooterPrivacy());
 
     }
 

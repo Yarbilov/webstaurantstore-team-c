@@ -1,22 +1,13 @@
 package tests;
 
-import com.sun.source.tree.AssertTree;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.CommercialRefrigeration;
-import pages.IndustrialSuppliesPage;
 import pages.InsideCommercialRefrigeration;
-import pages.InsideIndustrialSuppliesPage;
 import utils.Driver;
-
-import java.time.Duration;
-import java.util.Arrays;
+import utils.SeleniumUtils;
 import java.util.List;
 
 public class CommercialRefrigerationTests extends TestBase {
@@ -30,7 +21,7 @@ public class CommercialRefrigerationTests extends TestBase {
 
     }
 
-    @Test
+    @Test (groups = {"smoke"})
     public void itemsSearch(){
         mainPageTest();
         InsideCommercialRefrigeration insidePage = new InsideCommercialRefrigeration();
@@ -47,13 +38,20 @@ public class CommercialRefrigerationTests extends TestBase {
 
     }
 
-    @DataProvider
+    @DataProvider()
     public Object[][] getData(){
 
         return new Object[][] {
-                {"Reach-In"},
+                {"Reach-In Refrigerators"},
                 {"Merchandising"},
                 {"Prep"},
+                {"Bar Refrigeration"},
+                {"Refrigerated Display Cases"},
+                {"Ice Machines"},
+                {"Commercial Ice Cream Freezers"},
+                {"Walk-In Refrigeration"},
+                {"Undercounter"},
+                {"Commercial Blast Chillers"}
         };
 
     }
@@ -63,6 +61,19 @@ public class CommercialRefrigerationTests extends TestBase {
         mainPageTest();
         new InsideCommercialRefrigeration().lookForItems(searchTerm);
         Assert.assertTrue(Driver.getDriver().getTitle().contains(searchTerm));
+    }
+
+    @Test (groups = {"smoke"})
+    public void scrollPage(){
+        mainPageTest();
+        SeleniumUtils.scroll(10000,500);
+    }
+
+    @Test
+    public void scrollToElement() {
+        mainPageTest();
+        SeleniumUtils.scrollToElement(new InsideCommercialRefrigeration().getFooterPrivacy());
+
     }
 
 }

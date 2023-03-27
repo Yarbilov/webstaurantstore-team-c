@@ -15,6 +15,30 @@ public class InsideCommercialRefrigeration {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    public void setSearchBox(WebElement searchBox) {
+        this.searchBox = searchBox;
+    }
+
+    public void setMessage(WebElement message) {
+        this.message = message;
+    }
+
+    public void setList(List<WebElement> list) {
+        this.list = list;
+    }
+
+    public void setFooterPrivacy(WebElement footerPrivacy) {
+        this.footerPrivacy = footerPrivacy;
+    }
+
+    public WebElement getSearchBox() {
+        return searchBox;
+    }
+
+    public WebElement getFooterPrivacy() {
+        return footerPrivacy;
+    }
+
     @FindBy(id = "searchval")
     private WebElement searchBox;
 
@@ -28,6 +52,9 @@ public class InsideCommercialRefrigeration {
     public List<WebElement> getList(){
         return list;
     }
+
+    @FindBy (id = "privacy-footer-links")
+    private WebElement footerPrivacy;
 
     public  WebElement getMessage() {
         return message;
