@@ -62,7 +62,7 @@ public class PriceRangePage {
     private WebElement OnCart;
 
     @FindBy(xpath = "//*[@id=\"subject\"]/div[2]/div/a[2]")
-    private WebElement checkout;
+    private WebElement checkoutpage;
 
 
 
@@ -139,7 +139,7 @@ public class PriceRangePage {
     }
 
     public void clickOnOpenCheckoutPage(){
-        checkout.click();
+        checkoutpage .click();
     }
 
 

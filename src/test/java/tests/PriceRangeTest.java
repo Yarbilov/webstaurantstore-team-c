@@ -5,7 +5,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.PriceRangePage;
 import utils.Driver;
-
 import static org.testng.Assert.assertEquals;
 
 import utils.SeleniumUtils;
@@ -193,7 +192,10 @@ public class PriceRangeTest extends TestBase {
         new PriceRangePage().clickOnChooseItem();
         new PriceRangePage().clickOnAddToCartChosenItem();
         new PriceRangePage().clickOnCart();
-        Assert.assertEquals(Driver.getDriver().getTitle(), "Chef Knives: 200+ Professional Chef Knives at Low Prices!");
+        new PriceRangePage().clickOnOpenCheckoutPage();
+        assertEquals(Driver.getDriver().getTitle(), "Chef Knives - WebstaurantStore");
+
+
 
 
     }
