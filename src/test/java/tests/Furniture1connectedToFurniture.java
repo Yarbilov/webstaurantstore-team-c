@@ -1,15 +1,14 @@
-package pages;
+package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
-import utils.Driver;
 
 import java.time.Duration;
 
-public class Furniture1 {
+public class Furniture1connectedToFurniture {
 
     @Test
     public void test() throws InterruptedException {

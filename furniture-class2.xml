@@ -6,9 +6,9 @@
     <test name="UI Tests">
 
 
-            <classes>
-                <class name="tests.FurnitureTest"/>
-            </classes>
+        <classes>
+            <class name="tests.FurnitureTest2"/>
+        </classes>
 
     </test>
 

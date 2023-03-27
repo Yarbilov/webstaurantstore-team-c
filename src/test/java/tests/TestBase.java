@@ -4,6 +4,7 @@ package tests;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import io.netty.handler.ssl.OpenSslSessionStats;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -29,9 +30,8 @@ public class TestBase {
     protected static ExtentTest logger;
 
 
-
     @BeforeSuite(alwaysRun = true)
-    public void setupReport(){
+    public void setupReport() {
 
         extentReport = new ExtentReports();
         htmlReport = new ExtentSparkReporter(System.getProperty("user.dir") + "/target/extentReports/report.html");
@@ -45,7 +45,6 @@ public class TestBase {
     }
 
 
-
     @BeforeMethod(alwaysRun = true)
     public void setUpEachMethod(Method method) throws IOException {
         Driver.getDriver().manage().window().maximize();
@@ -56,19 +55,17 @@ public class TestBase {
     }
 
 
+    @AfterMethod(alwaysRun = true)
 
+    public void tearDownMethod(ITestResult testResult) {
 
-    @AfterMethod (alwaysRun = true)
-
-    public void tearDownMethod(ITestResult testResult){
-
-        if(testResult.getStatus() == ITestResult.SUCCESS){
+        if (testResult.getStatus() == ITestResult.SUCCESS) {
             logger.pass("TEST PASSED");
-        }else if(testResult.getStatus() == ITestResult.FAILURE){
+        } else if (testResult.getStatus() == ITestResult.FAILURE) {
             logger.fail("TEST FAILED");
             logger.fail(testResult.getThrowable());
             logger.addScreenCaptureFromPath(SeleniumUtils.getScreenshot("failed"));
-        }else {
+        } else {
             logger.skip("TEST SKIPED");
         }
 
@@ -76,11 +73,13 @@ public class TestBase {
     }
 
 
-
     @AfterSuite(alwaysRun = true)
-    public void tearDownReport(){
-       extentReport.flush();
+    public void tearDownReport() {
+        extentReport.flush();
     }
 
 
+    protected OpenSslSessionStats manage() {
+        return null;
+    }
 }
