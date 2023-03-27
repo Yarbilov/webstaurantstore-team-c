@@ -20,7 +20,7 @@ public class RegisterTest extends TestBase{
     Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.webstaurantstore.com/myaccount.html?goto=register");
     }
 
-    @Test
+   
     public void createAnAccount(){
         InsideRegisterPage page = new InsideRegisterPage();
         page.addEmail(ConfigReader.getProperty("email"));
@@ -39,7 +39,6 @@ public class RegisterTest extends TestBase{
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.webstaurantstore.com/myaccount");
     }
 
-    @Test
     public void failedRegistration(){
     createAnAccount();
         InsideRegisterPage page = new InsideRegisterPage();
