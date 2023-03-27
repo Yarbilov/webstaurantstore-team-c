@@ -11,8 +11,8 @@ import java.util.List;
 
 public class InsideCommercialRefrigeration {
 
-    public InsideCommercialRefrigeration(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public InsideCommercialRefrigeration() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     public void setSearchBox(WebElement searchBox) {
@@ -49,19 +49,19 @@ public class InsideCommercialRefrigeration {
     @FindBy(xpath = "//div[@class='ag-item p-2 xs:p-4']")
     private List<WebElement> list;
 
-    public List<WebElement> getList(){
+    public List<WebElement> getList() {
         return list;
     }
 
-    @FindBy (id = "privacy-footer-links")
+    @FindBy(id = "privacy-footer-links")
     private WebElement footerPrivacy;
 
-    public  WebElement getMessage() {
+    public WebElement getMessage() {
         return message;
     }
 
 
-    public void lookForItems(String searchWord){
+    public void lookForItems(String searchWord) {
 
         searchBox.sendKeys(searchWord, Keys.ENTER);
     }
