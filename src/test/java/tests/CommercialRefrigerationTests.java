@@ -8,12 +8,13 @@ import pages.CommercialRefrigeration;
 import pages.InsideCommercialRefrigeration;
 import utils.Driver;
 import utils.SeleniumUtils;
+
 import java.util.List;
 
 public class CommercialRefrigerationTests extends TestBase {
 
-    @Test (groups = {"smoke"})
-    public void mainPageTest (){
+    @Test(groups = {"smoke"})
+    public void mainPageTest() {
 
         CommercialRefrigeration commercialRefrigeration = new CommercialRefrigeration();
         commercialRefrigeration.clickCommercialRefrigerationLink();
@@ -21,27 +22,28 @@ public class CommercialRefrigerationTests extends TestBase {
 
     }
 
-    @Test (groups = {"smoke"})
-    public void itemsSearch(){
+    @Test()
+    public void itemsSearch() {
         mainPageTest();
         InsideCommercialRefrigeration insidePage = new InsideCommercialRefrigeration();
         insidePage.lookForItems("Reach-In");
         Assert.assertTrue(insidePage.getMessage().isDisplayed());
     }
+
     @Test
-    public void itemsSize(){
+    public void itemsSize() {
         itemsSearch();
         InsideCommercialRefrigeration insidePage = new InsideCommercialRefrigeration();
         List<WebElement> list = insidePage.getList();
         int numberItems = insidePage.getList().size();
-        Assert.assertEquals(list.size(),numberItems);
+        Assert.assertEquals(list.size(), numberItems);
 
     }
 
     @DataProvider()
-    public Object[][] getData(){
+    public Object[][] getData() {
 
-        return new Object[][] {
+        return new Object[][]{
                 {"Reach-In Refrigerators"},
                 {"Merchandising"},
                 {"Prep"},
@@ -56,17 +58,17 @@ public class CommercialRefrigerationTests extends TestBase {
 
     }
 
-    @Test (dataProvider = "getData")
-    public void testSearch(String searchTerm){
+    @Test(dataProvider = "getData")
+    public void testSearch(String searchTerm) {
         mainPageTest();
         new InsideCommercialRefrigeration().lookForItems(searchTerm);
         Assert.assertTrue(Driver.getDriver().getTitle().contains(searchTerm));
     }
 
-    @Test (groups = {"smoke"})
-    public void scrollPage(){
+    @Test(groups = {"smoke"})
+    public void scrollPage() {
         mainPageTest();
-        SeleniumUtils.scroll(10000,500);
+        SeleniumUtils.scroll(10000, 500);
     }
 
     @Test

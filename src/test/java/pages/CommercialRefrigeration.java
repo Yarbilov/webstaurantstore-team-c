@@ -8,16 +8,16 @@ import utils.Driver;
 
 public class CommercialRefrigeration {
 
-        public CommercialRefrigeration(){
-            PageFactory.initElements(Driver.getDriver(),this);
-        }
-
-        @FindBy(xpath = "//a[ contains( . , 'Refrigeration' )]")
-        private WebElement CommercialRefrigerationLink;
-
-
-        public void clickCommercialRefrigerationLink(){
-            CommercialRefrigerationLink.click();
-        }
-
+    public CommercialRefrigeration() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
+    @FindBy(xpath = "//a[ contains( . , 'Refrigeration' )]")
+    private WebElement CommercialRefrigerationLink;
+
+
+    public void clickCommercialRefrigerationLink() {
+        CommercialRefrigerationLink.click();
+    }
+
+}
