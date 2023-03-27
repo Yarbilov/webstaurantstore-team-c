@@ -21,4 +21,6 @@ public class IndustrialSuppliesPage {
         IndustrialLink.click();
     }
 
+    public void lookForItems(String searchTerm) {
+    }
 }

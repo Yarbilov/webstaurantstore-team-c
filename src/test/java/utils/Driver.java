@@ -6,7 +6,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 
 public class Driver {
 
@@ -40,12 +42,18 @@ public class Driver {
                     drivers.set(new EdgeDriver());
                     break;
                 case "headlessEdge":
-                    EdgeOptions edgeOptions = new EdgeOptions();
-                    edgeOptions.addArguments("--headless");
-                    drivers.set(new EdgeDriver(edgeOptions));
+                    EdgeOptions edgeOptions1 = new EdgeOptions();
+                    edgeOptions1.addArguments("--headless");
+                    drivers.set(new EdgeDriver(edgeOptions1));
                     break;
                 case "firefox":
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
                     drivers.set(new FirefoxDriver());
+                    break;
+                case "headlessFirefox":
+                    FirefoxOptions firefoxOptions1 = new FirefoxOptions();
+                    firefoxOptions1.addArguments("--headless");
+                    drivers.set(new FirefoxDriver(firefoxOptions1));
                     break;
                 case "safari":
                     drivers.set(new SafariDriver());

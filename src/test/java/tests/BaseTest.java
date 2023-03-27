@@ -18,10 +18,10 @@ public class BaseTest {
         Driver.getDriver().get(ConfigReader.getProperty("homepage"));
     }
 
-    // @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
 
-    // public void tearDownMethod() {
-    //    Driver.quitDriver();
-    // }
+     public void tearDownMethod() {
+       Driver.quitDriver();
+     }
 
 }
